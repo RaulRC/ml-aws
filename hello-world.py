@@ -12,8 +12,11 @@ from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
 
+# Create file object for outputs
+outputFile = open("output.txt", "w")
+
 # Load dataset
-url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
+url = "data/iris.data"
 names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
 dataset = pandas.read_csv(url, names=names)
 
@@ -53,13 +56,22 @@ for name, model in models:
     names.append(name)
     msg = "%s: %f (%f)" % (name, cv_results.mean(), cv_results.std())
     print(msg)
+    outputFile.write(msg + "\n")
 
 
 # Make predictions on validation dataset
 knn = KNeighborsClassifier()
 knn.fit(X_train, Y_train)
 predictions = knn.predict(X_validation)
-print(accuracy_score(Y_validation, predictions))
-print(confusion_matrix(Y_validation, predictions))
-print(classification_report(Y_validation, predictions))
+accScore = accuracy_score(Y_validation, predictions)
+confMatrix = confusion_matrix(Y_validation, predictions)
+classReport = classification_report(Y_validation, predictions)
+print(accScore)
+print(confMatrix)
+print(classReport)
+outputFile.write(str(accScore) + "\n")
+outputFile.write(str(confMatrix) + "\n")
+outputFile.write(str(classReport) + "\n")
+outputFile.close()
+
 
