@@ -27,7 +27,7 @@ outputFile = open("output.txt", "w")
 # Load dataset
 url = "data/terrorism.csv"
 dataset = pandas.read_csv(url)
-dataset = dataset[["eventid", "iyear", "imonth", "iday", "country"]]
+dataset = dataset[["eventid", "iyear", "imonth", "iday", "country"]][:100000]
 
 
 # In[32]:
