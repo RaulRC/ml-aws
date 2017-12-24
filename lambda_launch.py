@@ -3,8 +3,8 @@ import botocore
 
 def lambda_handler(event, context):
     print boto3.__version__
-    """ Lambda handler taking [message] and creating a httpd instance with an echo. """
-    
+    """ Lambda handler taking event and creating a preprocessing instance all covered in ec2bootstrap.sh """
+
     BUCKET_NAME = event['bucket']
     KEY = event['bucketKey']
     s3 = boto3.client('s3')
