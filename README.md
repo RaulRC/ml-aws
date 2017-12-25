@@ -11,7 +11,9 @@ PoC for ML arch on AWS
   "groupId" : "yourGroupName",
   "ami" : "ami-1a962263",
   "instanceType" : "t2.micro",
-  "instanceName" : "yourInstanceName"
+  "instanceName" : "yourInstanceName",
+  "bucket" : "yourBucketName",
+  "bucketKey" : "yourFolder/yourFile"
 }
 ```
 
