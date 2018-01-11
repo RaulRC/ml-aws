@@ -89,7 +89,7 @@ outputFile.write(str(confMatrix) + "\n")
 outputFile.write(str(classReport) + "\n")
 outputFile.close()
 
-
+print float(0)/float(0)
 # In[ ]:
 
 
