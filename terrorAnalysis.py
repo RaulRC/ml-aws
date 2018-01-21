@@ -29,7 +29,6 @@ url = "data/terrorism.csv"
 dataset = pandas.read_csv(url)
 dataset = dataset[["eventid", "iyear", "imonth", "iday", "country"]][:10000]
 
-
 # In[32]:
 
 # Split-out validation dataset
@@ -89,7 +88,6 @@ outputFile.write(str(accScore) + "\n")
 outputFile.write(str(confMatrix) + "\n")
 outputFile.write(str(classReport) + "\n")
 outputFile.close()
-
 
 # In[ ]:
 
