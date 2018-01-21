@@ -15,4 +15,5 @@ hello = tf.constant('Hello, TensorFlow!')
 sess = tf.Session()
 
 # Run the op
-print(sess.run(hello))
+with open("output_tensor.txt", "w") as outputFile:
+    outputFile.write(sess.run(hello))
